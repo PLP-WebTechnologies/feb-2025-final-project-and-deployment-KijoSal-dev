@@ -1,0 +1,43 @@
+.about-page .about-info {
+    margin-bottom: 3rem;
+}
+
+.about-page .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1.5rem;
+    display: block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-page .about-info p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.about-page .experience,
+.about-page .education {
+    margin-bottom: 2.5rem;
+}
+
+.about-page .experience-item,
+.about-page .education-item {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.about-page .experience-item h3,
+.about-page .education-item h3 {
+    margin-bottom: 0.5rem;
+}
+
+.about-page .experience-item .duration,
+.about-page .education-item .duration {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+}

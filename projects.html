@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css"> <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .project-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+            transition: all 0.3s ease-in-out;
+        }
+        /* Basic slider styles (can be expanded in a separate CSS file) */
+        .image-slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .image-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slider-image {
+            min-width: 100%;
+            height: auto;
+        }
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            right: 10px;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+        }
+        .slider-nav button {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow-md py-6">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-semibold text-blue-600">My Portfolio</h1>
+            <nav class="space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-500 hover-effect">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-500 hover-effect">About</a>
+                <a href="projects.html" class="text-gray-700 hover:text-blue-500 hover-effect">Projects</a>
+                <a href="contact.html" class="text-gray-700 hover:text-blue-500 hover-effect">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 fade-in">
+        <section class="mb-8">
+            <h2 class="text-3xl font-semibold text-blue-600 mb-4">My Projects</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 project-card">
+                    <h3 class="text-xl font-semibold text-blue-500 mb-2">Project 1: E-COMMERCE WEBSITE</h3>
+                    <p class="text-gray-700 mb-4">A fully responsive e-commerce platform built with React and Node.js.</p>
+                    <div class="image-slider-container">
+                        <div class="image-slider" id="slider1">
+                            <img src="images/98623b2b-0d99-46dc-9c6d-6b122a5959f5.png" alt="Project 1 - Image 1" class="slider-image">
+                            <img src="images/eb419bef-1c8f-4a87-b97c-1e8be8c00491.png" alt="Project 1 - Image 2" class="slider-image">
+                            </div>
+                        <div class="slider-nav">
+                            <button onclick="prevSlide('slider1')">&lt;</button>
+                            <button onclick="nextSlide('slider1')">&gt;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 project-card">
+                    <h3 class="text-xl font-semibold text-blue-500 mb-2">Project 2: Picha Hodari Hub</h3>
+                    <p class="text-gray-700 mb-4">Daily photo blog from reliable and reputable photographers and videographers.</p>
+                    <div class="image-slider-container">
+                        <div class="image-slider" id="slider2">
+                            <img src="images/e77e5e59-1a91-48be-8a93-126ad700194a.png" alt="Project 2 - Image 1" class="slider-image">
+                            <img src="images/493d2609-edf2-47e0-b4d0-cab36bfca3d3.png" alt="Project 2 - Image 2" class="slider-image">
+                        </div>
+                        <div class="slider-nav">
+                            <button onclick="prevSlide('slider2')">&lt;</button>
+                            <button onclick="nextSlide('slider2')">&gt;</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 project-card">
+                    <h3 class="text-xl font-semibold text-blue-500 mb-2">Project 3: Evet Scheduler </h3>
+                    <p class="text-gray-700 mb-4">A system that can show Form inputs, time-based data, user-friendly UI.</p>
+                    <div class="image-slider-container">
+                        <div class="image-slider" id="slider3">
+                            <img src="images/image.jpg" alt="Project 3 - Image 1" class="slider-image">
+                            <img src="images/image(1).jpg" alt="Project 3 - Image 2" class="slider-image">
+                        </div>
+                        <div class="slider-nav">
+                            <button onclick="prevSlide('slider3')">&lt;</button>
+                            <button onclick="nextSlide('slider3')">&gt;</button>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-200 py-4 text-center text-gray-600">
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function nextSlide(sliderId) {
+            const slider = document.getElementById(sliderId);
+            const firstSlide = slider.children[0];
+            const slideWidth = firstSlide.offsetWidth;
+
+            // Move the slider to the left
+            slider.style.transition = 'transform 0.5s ease-in-out';
+            slider.style.transform = `translateX(-${slideWidth}px)`;
+            // After the transition ends, move the first slide to the end and reset the position
+            slider.addEventListener('transitionend', function() {
+                slider.appendChild(firstSlide);
+                slider.style.transition = 'none';
+                slider.style.transform = 'translateX(0)';
+            }, { once: true });
+        }
+
+        function prevSlide(sliderId) {
+            const slider = document.getElementById(sliderId);
+            const lastSlide = slider.lastElementChild;
+            const slideWidth = lastSlide.offsetWidth;
+            slider.insertBefore(lastSlide, slider.firstChild);
+            slider.style.transition = 'none';
+            slider.style.transform = `translateX(-${slideWidth}px)`;
+            setTimeout(() => {
+                slider.style.transition = 'transform 0.5s ease-in-out';
+                slider.style.transform = 'translateX(0)';
+            }, 0);
+        }
+
+        // Basic auto-slide functionality (optional)
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.image-slider').forEach(slider => {
+                setInterval(() => nextSlide(slider.id), 5000); // Change slide every 5 seconds
+            });
+        });
+        </script>
